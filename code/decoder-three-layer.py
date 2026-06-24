@@ -27,7 +27,6 @@ class ConvE(nn.Module):
                                     kernel_size=ker_sz, bias=False)
         self.conv2 = torch.nn.Conv2d(out_channels, out_channels=out_channels, stride=1, padding=3,
                                     kernel_size=ker_sz, bias=False)
-        # 下面这两行是我删除的,还需要把kernel size从8改为7，但还是超出内存了，704M
         # flat_sz_h = int(2 * self.k_h) - ker_sz + 1
         # flat_sz_w = self.k_w - ker_sz + 1
         flat_sz_h = int(2 * self.k_h)
